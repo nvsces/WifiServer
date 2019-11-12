@@ -122,5 +122,21 @@ namespace WebApplication1.Controllers
                               select item).ToList();
             return logs;
         }
+
+        [HttpGet]
+        public string GettingString(int Id)
+        {
+            string result = "";
+            LppDatabaseContext db = new LppDatabaseContext();
+
+            var logs = (from item in db.Logs
+                        where item.LocationId == Id
+                        select item).ToList();
+            foreach(var item in logs)
+            {
+                result =result+ item.SSID.ToString() + " " + item.BSSID.ToString() + " " + item.AvgLevel.ToString() + '\n';
+            }
+            return result;
+        }
     }
 }

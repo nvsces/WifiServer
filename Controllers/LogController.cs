@@ -138,5 +138,27 @@ namespace WebApplication1.Controllers
             }
             return result;
         }
+
+        [HttpGet]
+        public string PointCount()  //возвращает количество точек в БД
+        {
+            int i = 0;
+            LppDatabaseContext db = new LppDatabaseContext();
+            foreach (var item in db.LocationRooms)
+                i++;
+            return i.ToString();
+        }
+
+        [HttpGet]
+        public string NameListPoint() //возвращает список точек и их ID
+        {
+            string Name_ListPoint = "";
+            LppDatabaseContext db = new LppDatabaseContext();
+            foreach (var item in db.LocationRooms)
+            {
+                Name_ListPoint = Name_ListPoint + item.Id.ToString() + " " + item.Name + '\n';
+            }
+            return Name_ListPoint;
+        }
     }
 }

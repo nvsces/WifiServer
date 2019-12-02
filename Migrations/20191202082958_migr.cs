@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ServerWebApi.Migrations
 {
-    public partial class NewMigration : Migration
+    public partial class migr : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -31,6 +31,7 @@ namespace ServerWebApi.Migrations
                     AvgLevel = table.Column<double>(nullable: false),
                     number_of_Mentions = table.Column<double>(nullable: false),
                     LocationId = table.Column<int>(nullable: false),
+                    LocationName = table.Column<string>(nullable: true),
                     LocRommId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>

@@ -46,6 +46,8 @@ namespace ServerWebApi.Migrations
 
                     b.Property<int>("LocationId");
 
+                    b.Property<string>("LocationName");
+
                     b.Property<string>("SSID");
 
                     b.Property<double>("number_of_Mentions");

@@ -13,6 +13,8 @@ namespace ShServer.Models
         public double AvgLevel { get; set; }
         public double number_of_Mentions { get; set; }
         public int LocationId { get; set; }
+        public string LocationName { get; set; }
+
         public virtual LocationRoom LocRomm { get; set; }
     }
 }

@@ -10,8 +10,8 @@ using ShServer;
 namespace ServerWebApi.Migrations
 {
     [DbContext(typeof(LppDatabaseContext))]
-    [Migration("20190910184837_NewMigration")]
-    partial class NewMigration
+    [Migration("20191202082958_migr")]
+    partial class migr
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,6 +47,8 @@ namespace ServerWebApi.Migrations
                     b.Property<int?>("LocRommId");
 
                     b.Property<int>("LocationId");
+
+                    b.Property<string>("LocationName");
 
                     b.Property<string>("SSID");
 
